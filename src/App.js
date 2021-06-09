@@ -1,11 +1,11 @@
-import {Footer, Header, Table} from './components'
+import {Footer, Header, MainContent} from './components'
 import './index.scss';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Table />
+      <MainContent />
       <Footer />
     </div>
   );

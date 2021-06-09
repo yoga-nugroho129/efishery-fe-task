@@ -1,5 +1,7 @@
 $main-color: #2ab896;
+$hover-color: rgba(42, 184, 150, 0.7);
 $font-color: #333333;
+$shadow: 3px 2px 6px 2px rgba(125, 125, 125, 0.15);
 
 @media only screen and (max-width: 576px) {
   .container {
@@ -51,12 +53,144 @@ body {
   color: $font-color;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+h2 {
+  margin: 0;
+}
+
+button {
+  border: none;
+  border-radius: 7px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.App {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 header {
   background-color: $main-color;
   color: #ffffff;
+
+  .container {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.main-content {
+  flex: 1;
+  margin: 30px auto;
+
+  .title-section {
+    margin-bottom: 20px;
+  }
+
+  .add-btn {
+    background: $main-color;
+    color: #ffffff;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+
+  .action-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .search-field {
+      display: flex;
+      align-items: center;
+      background-color: #ffffff;
+      border-radius: 5px;
+      padding: 10px 15px;
+      box-shadow: $shadow;
+      -webkit-box-shadow: $shadow;
+      -moz-box-shadow: $shadow;
+
+      .search-input {
+        border: none;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .search-icon {
+        color: $main-color;
+      }
+    }
+  }
+}
+
+.table-section table {
+  width: 100%;
+  border-spacing: 0;
+  border-radius: 5px;
+  padding: 15px 25px;
+  background-color: #ffffff;
+  box-shadow: $shadow;
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+
+  th {
+    text-align: left;
+
+    &:hover {
+      color: $main-color;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+
+      span {
+        margin-left: 3px;
+        color: $main-color;
+      }
+    }
+  }
+
+  tbody {
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    td {
+      padding: 15px 10px;
+      font-size: 14px;
+    }
+  }
+}
+
+.table-pagination {
+  text-align: center;
+
+  .page-controller {
+    margin-top: 10px;
+
+    input {
+      border: 1px solid $main-color;
+      padding: 5px;
+      border-radius: 5px;
+      width: 50px;
+      text-align: center;
+      margin-left: 5px;
+    }
+  }
+
+  .btn-group {
+    margin-top: 10px;
+
+    button {
+      margin: 0 5px;
+    }
+  }
 }

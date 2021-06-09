@@ -1,9 +1,9 @@
-import './index.css';
+import './index.scss';
 
 function App() {
   return (
     <div className="App">
-      Hello World
+      Hello
     </div>
   );
 }

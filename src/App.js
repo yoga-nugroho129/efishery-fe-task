@@ -1,9 +1,12 @@
+import {Footer, Header, Table} from './components'
 import './index.scss';
 
 function App() {
   return (
     <div className="App">
-      Hello
+      <Header />
+      <Table />
+      <Footer />
     </div>
   );
 }

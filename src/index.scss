@@ -1,5 +1,5 @@
 $main-color: #2ab896;
-$hover-color: rgba(42, 184, 150, 0.7);
+$red-color: #ff4949;
 $font-color: #333333;
 $shadow: 3px 2px 6px 2px rgba(125, 125, 125, 0.15);
 
@@ -91,27 +91,27 @@ header {
     margin-bottom: 20px;
   }
 
-  .add-btn {
-    background: $main-color;
-    color: #ffffff;
-
-    &:hover {
-      background-color: $hover-color;
-    }
-  }
-
   .action-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 
+    .add-btn {
+      background: $main-color;
+      color: #ffffff;
+
+      &:hover {
+        opacity: 70%;
+      }
+    }
+
     .search-field {
       display: flex;
       align-items: center;
       background-color: #ffffff;
       border-radius: 5px;
-      padding: 10px 15px;
+      padding: 7px 10px;
       box-shadow: $shadow;
       -webkit-box-shadow: $shadow;
       -moz-box-shadow: $shadow;
@@ -131,41 +131,45 @@ header {
   }
 }
 
-.table-section table {
-  width: 100%;
-  border-spacing: 0;
-  border-radius: 5px;
-  padding: 15px 25px;
-  background-color: #ffffff;
+.table-section {
+  overflow-x: auto;
   box-shadow: $shadow;
   -webkit-box-shadow: $shadow;
   -moz-box-shadow: $shadow;
+  padding: 15px 25px;
+  background-color: #ffffff;
+  border-radius: 5px;
 
-  th {
-    text-align: left;
+  table {
+    width: 100%;
+    border-spacing: 0;
 
-    &:hover {
-      color: $main-color;
-    }
+    th {
+      text-align: left;
 
-    div {
-      display: flex;
-      align-items: center;
-
-      span {
-        margin-left: 3px;
+      &:hover {
         color: $main-color;
       }
-    }
-  }
 
-  tbody {
-    tr:hover {
-      background-color: #f1f1f1;
+      div {
+        display: flex;
+        align-items: center;
+
+        span {
+          margin-left: 3px;
+          color: $main-color;
+        }
+      }
     }
-    td {
-      padding: 15px 10px;
-      font-size: 14px;
+
+    tbody {
+      tr:hover {
+        background-color: #f1f1f1;
+      }
+      td {
+        padding: 15px 10px;
+        font-size: 14px;
+      }
     }
   }
 }
@@ -192,5 +196,28 @@ header {
     button {
       margin: 0 5px;
     }
+  }
+}
+
+.row-btn {
+  display: flex;
+
+  button {
+    padding: 6px 8px;
+    color: #ffffff;
+
+    &:hover {
+      opacity: 70%;
+    }
+  }
+
+  .edit-btn {
+    background-color: $main-color;
+    margin-right: 3px;
+  }
+
+  .delete-btn {
+    background-color: $red-color;
+    margin-right: 5px;
   }
 }

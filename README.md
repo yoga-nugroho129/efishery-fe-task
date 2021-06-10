@@ -2,6 +2,47 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## How To Install
+
+Clone the project to your local machine then in the project directory run:
+
+### `npm install`
+
+to install all dependencies, then run & develop in your local machine run:
+
+### `npm start`
+
+## How To Use This App
+
+This app has CRUD (Create, Read, Update, Delete) features for the list of Fish Data.
+
+### `Read features`
+
+Once this app is run, it will fetch the available data from server with loading effect & show it inside table.
+This app only shows the data that has ID that is not `null`
+
+### `Table Feature`
+
+Table has `Search` feature, so you can type any text you want to search data.
+Search is not limited to certain column, it will search for the entire column (except action button column) for any match text input.
+
+Table also has `Sorting by Column` by click the table header.
+
+Table has it's `Pagination` with page-jump feature, so you can directly move to certain page you want by entering the number of page. Per page display 10 rows.
+
+### `Create features`
+
+You can add new data by clicking `Tambah Data` button.
+It will open modal that contains a form about new data that will be added to the database.
+
+### `Update & Delete features`
+
+Every row has it's own action column that has 2 buttons.
+
+`Edit` button will open modal that contains selected row data, so you can edit existing data as you want.
+
+`Delete` button will open confirmation button to make sure that you really want to delete specific row.
+
 ## Available Scripts
 
 In the project directory, you can run:

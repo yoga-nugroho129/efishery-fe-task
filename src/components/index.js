@@ -8,6 +8,7 @@ import CreateModal from './Modals/CreateModal'
 import DeleteModal from './Modals/DeleteModal'
 import EditModal from './Modals/EditModal'
 import InputField from './InputField'
+import LoadingSpinner from './LoadingSpinner'
 
 export {
   Header,
@@ -19,5 +20,6 @@ export {
   CreateModal,
   DeleteModal,
   EditModal,
-  InputField
+  InputField,
+  LoadingSpinner
 }

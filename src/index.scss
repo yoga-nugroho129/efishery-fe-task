@@ -70,12 +70,21 @@ button {
   color: #ffffff;
 
   &:disabled {
-    color: green;
+    opacity: 60%;
+    cursor: not-allowed;
+
+    &:hover {
+      opacity: 60%;
+    }
   }
 
   &:hover {
     opacity: 80%;
   }
+}
+
+.loading-btn {
+  animation: spin 1000ms linear infinite;
 }
 
 .input-field,
@@ -340,5 +349,14 @@ footer {
       display: flex;
       flex-direction: column;
     }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

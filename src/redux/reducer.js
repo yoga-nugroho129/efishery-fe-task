@@ -15,9 +15,9 @@ import {
   CREATE_DATA_SUCCESS,
   CREATE_DATA_FAIL,
 
-  // UPDATE_DATA_REQUEST,
-  // UPDATE_DATA_SUCCESS,
-  // UPDATE_DATA_FAIL,
+  UPDATE_DATA_REQUEST,
+  UPDATE_DATA_SUCCESS,
+  UPDATE_DATA_FAIL,
 
   DELETE_DATA_REQUEST,
   DELETE_DATA_SUCCESS,
@@ -102,7 +102,28 @@ const reducer = (state = initState, action) => {
         error: action.payload,
       }
 
-  // GET SIZE
+  // CREATE
+    case UPDATE_DATA_REQUEST:
+      return {
+        ...state,
+        isLoadingButton: true
+      }
+
+    case UPDATE_DATA_SUCCESS:
+      return {
+        ...state,
+        isLoadingButton: false,
+        isRequestSuccess: true,
+      }
+
+    case UPDATE_DATA_FAIL:
+      return {
+        ...state,
+        isLoadingButton: false,
+        error: action.payload,
+      }
+
+  // UPDATE
     case CREATE_DATA_REQUEST:
       return {
         ...state,
@@ -121,7 +142,7 @@ const reducer = (state = initState, action) => {
         ...state,
         isLoadingButton: false,
         error: action.payload,
-      }      
+      }
 
   // DELETE
     case DELETE_DATA_REQUEST:

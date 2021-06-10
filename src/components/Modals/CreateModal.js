@@ -122,12 +122,6 @@ const CreateModal = ({
               <InputField label="Harga dalam Rupiah" type="number" placeholder="Masukan Harga" name="price" onChange={handleChange}/>
               <div className="btn-group">
                 <button 
-                  className="cancel-edit-btn"
-                  onClick={closeModal}
-                >
-                  Kembali
-                </button>
-                <button 
                   className="confirm-edit-btn"
                   disabled={isLoadingButton}
                   onClick={handleSubmit}

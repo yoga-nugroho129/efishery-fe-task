@@ -16,9 +16,9 @@ import {
   CREATE_DATA_SUCCESS,
   CREATE_DATA_FAIL,
 
-  // UPDATE_DATA_REQUEST,
-  // UPDATE_DATA_SUCCESS,
-  // UPDATE_DATA_FAIL,
+  UPDATE_DATA_REQUEST,
+  UPDATE_DATA_SUCCESS,
+  UPDATE_DATA_FAIL,
 
   DELETE_DATA_REQUEST,
   DELETE_DATA_SUCCESS,
@@ -140,6 +140,32 @@ export const handleCreateData = newData => {
       .post('/list', newData, headers)
       .then(() => dispatch(createDataSuccess()))
       .catch(error => dispatch(createDataFail(error.response.data)))
+  }
+}
+
+const editDataRequest = () => {
+  return { type: UPDATE_DATA_REQUEST }
+}
+
+const editDataSuccess = () => {
+  return { type: UPDATE_DATA_SUCCESS }
+}
+
+const editDataFail = error => {
+  return {
+    type: UPDATE_DATA_FAIL,
+    payload: error
+  }
+}
+
+export const handleEditData = updatedData => {
+  return dispatch => {
+    dispatch(editDataRequest())
+
+    axios
+      .put('/list', updatedData, headers)
+      .then(() => dispatch(editDataSuccess()))
+      .catch(error => dispatch(editDataFail(error.response.data)))
   }
 }
 

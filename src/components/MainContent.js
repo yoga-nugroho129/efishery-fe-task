@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react'
 import TableData from './Table/TableData'
 import { useTable,  useGlobalFilter, useSortBy, usePagination  } from 'react-table'
-import { TablePagination, TableSearchField } from '.'
+import { CreateModal, DeleteModal, EditModal, TablePagination, TableSearchField } from '.'
 import { FaEdit, FaTrashAlt } from 'react-icons/fa'
 import moment from 'moment'
 
@@ -128,6 +128,20 @@ const MainContent = () => {
       timestamp: "1591587981374"
     },
   ])
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false)
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
+  const [selectedItem, setSelectedItem] = useState({})
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false)
+
+  const openEditModal = item => {
+    setSelectedItem(item)
+    setIsEditModalOpen(true)
+  }
+
+  const openDeleteModal = item => {
+    setSelectedItem(item)
+    setIsDeleteModalOpen(true)
+  }
 
   const data = useMemo(() => dataList, [dataList])
   const columns = useMemo(() => [
@@ -164,14 +178,14 @@ const MainContent = () => {
           <button 
             className="edit-btn"
             title={`Edit "${item.komoditas}" Info`}
-            onClick={() => alert(item.komoditas)}
+            onClick={() => openEditModal(item)}
           >
             <FaEdit />
           </button>
           <button 
             className="delete-btn"
             title={`Hapus "${item.komoditas}"`}
-            onClick={() => alert(item.price)}
+            onClick={() => openDeleteModal(item)}
           >
             <FaTrashAlt size={12} />
           </button>
@@ -210,7 +224,7 @@ const MainContent = () => {
         <h2>Harga Perikanan</h2>
       </div>
       <div className="action-container">
-        <button className="add-btn">Tambah Data</button>
+        <button className="add-btn" onClick={() => setIsCreateModalOpen(true)}>Tambah Data</button>
         <TableSearchField 
           globalFilter={globalFilter}
           setGlobalFilter={setGlobalFilter}
@@ -236,6 +250,20 @@ const MainContent = () => {
           pageCount={pageCount}
         />
       </div>
+      <CreateModal
+        isCreateModalOpen={isCreateModalOpen}
+        setIsCreateModalOpen={setIsCreateModalOpen}
+      />
+      <DeleteModal 
+        isDeleteModalOpen={isDeleteModalOpen}
+        setIsDeleteModalOpen={setIsDeleteModalOpen}
+        selectedItem={selectedItem}
+        />
+      <EditModal
+        isEditModalOpen={isEditModalOpen}
+        setIsEditModalOpen={setIsEditModalOpen}
+        selectedItem={selectedItem}
+      />
     </div>
   )
 }

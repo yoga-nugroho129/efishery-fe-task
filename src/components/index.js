@@ -1,9 +1,13 @@
-import Header from './Header';
-import MainContent from './MainContent';
-import Footer from './Footer';
-import TableData from './Table/TableData';
-import TableSearchField from './Table/TableSearchField';
-import TablePagination from './Table/TablePagination';
+import Header from './Header'
+import MainContent from './MainContent'
+import Footer from './Footer'
+import TableData from './Table/TableData'
+import TableSearchField from './Table/TableSearchField'
+import TablePagination from './Table/TablePagination'
+import CreateModal from './Modals/CreateModal'
+import DeleteModal from './Modals/DeleteModal'
+import EditModal from './Modals/EditModal'
+import InputField from './InputField'
 
 export {
   Header,
@@ -11,5 +15,9 @@ export {
   Footer,
   TableData,
   TableSearchField,
-  TablePagination
+  TablePagination,
+  CreateModal,
+  DeleteModal,
+  EditModal,
+  InputField
 }

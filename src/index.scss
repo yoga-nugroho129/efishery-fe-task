@@ -4,6 +4,7 @@ $red-color: #ff4949;
 $font-color: #333333;
 $shadow: 3px 2px 6px 2px rgba(125, 125, 125, 0.15);
 
+// Responsive Container
 @media only screen and (max-width: 576px) {
   .container {
     width: 95%;
@@ -46,6 +47,7 @@ $shadow: 3px 2px 6px 2px rgba(125, 125, 125, 0.15);
   }
 }
 
+// Base element
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -65,6 +67,36 @@ button {
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
+  color: #ffffff;
+
+  &:disabled {
+    color: green;
+  }
+
+  &:hover {
+    opacity: 80%;
+  }
+}
+
+.input-field,
+.select-field {
+  text-align: left;
+  margin: 7px 0;
+
+  label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  input,
+  select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 5px;
+    border-radius: 5px;
+    border: 1px solid $main-color;
+  }
 }
 
 .App {
@@ -74,6 +106,7 @@ button {
   min-height: 100vh;
 }
 
+// Header Component
 header {
   background-color: $main-color;
   color: #ffffff;
@@ -84,9 +117,10 @@ header {
   }
 }
 
+// Main content
 .main-content {
   flex: 1;
-  margin: 30px auto;
+  margin: 30px auto 60px;
 
   .title-section {
     margin-bottom: 20px;
@@ -101,10 +135,6 @@ header {
     .add-btn {
       background: $main-color;
       color: #ffffff;
-
-      &:hover {
-        opacity: 70%;
-      }
     }
 
     .search-field {
@@ -132,6 +162,7 @@ header {
   }
 }
 
+// Table Content
 .table-section {
   overflow-x: auto;
   box-shadow: $shadow;
@@ -146,6 +177,7 @@ header {
     border-spacing: 0;
 
     th {
+      padding-top: 5px;
       text-align: left;
 
       &:hover {
@@ -196,6 +228,7 @@ header {
 
     button {
       margin: 0 5px;
+      color: #333333;
     }
   }
 }
@@ -205,11 +238,6 @@ header {
 
   button {
     padding: 6px 8px;
-    color: #ffffff;
-
-    &:hover {
-      opacity: 70%;
-    }
   }
 
   .edit-btn {
@@ -223,6 +251,7 @@ header {
   }
 }
 
+// Footer Section
 footer {
   background-color: $secondary-color;
   color: #ffffff;
@@ -235,5 +264,81 @@ footer {
 
   a {
     color: #ffffff;
+  }
+}
+
+// Modals
+.react-responsive-modal-modal {
+  border-radius: 5px;
+  padding: 0 !important;
+
+  .modal-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    font-weight: 600;
+    color: #ffffff;
+
+    .close-modal {
+      padding: 0;
+      background-color: transparent;
+    }
+  }
+
+  .delete-modal-title {
+    background-color: $red-color;
+    width: 300px;
+  }
+
+  .edit-modal-title {
+    background-color: $main-color;
+    width: 400px;
+  }
+
+  .modal-body {
+    text-align: center;
+    padding: 15px;
+
+    .text-wrapper {
+      margin-bottom: 20px;
+      overflow-wrap: break-word;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: 15px;
+
+      button {
+        width: 100px;
+      }
+
+      .cancel-delete-btn {
+        background-color: $main-color;
+      }
+
+      .confirm-delete-btn {
+        background-color: $red-color;
+      }
+
+      .cancel-edit-btn {
+        background-color: transparent;
+        color: $secondary-color;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .confirm-edit-btn {
+        background-color: $main-color;
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }

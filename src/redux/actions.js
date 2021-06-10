@@ -12,9 +12,9 @@ import {
   GET_DATA_SIZE_SUCCESS,
   GET_DATA_SIZE_FAIL,
 
-  // CREATE_DATA_REQUEST,
-  // CREATE_DATA_SUCCESS,
-  // CREATE_DATA_FAIL,
+  CREATE_DATA_REQUEST,
+  CREATE_DATA_SUCCESS,
+  CREATE_DATA_FAIL,
 
   // UPDATE_DATA_REQUEST,
   // UPDATE_DATA_SUCCESS,
@@ -114,6 +114,32 @@ export const handleGetDataSize = () => {
       .get('/option_size')
       .then(response => dispatch(getDataSizeSuccess(response.data)))
       .catch(error => dispatch(getDataSizeFail(error.response.data)))
+  }
+}
+
+const createDataRequest = () => {
+  return { type: CREATE_DATA_REQUEST }
+}
+
+const createDataSuccess = () => {
+  return { type: CREATE_DATA_SUCCESS }
+}
+
+const createDataFail = error => {
+  return {
+    type: CREATE_DATA_FAIL,
+    payload: error
+  }
+}
+
+export const handleCreateData = newData => {
+  return dispatch => {
+    dispatch(createDataRequest())
+
+    axios
+      .post('/list', newData, headers)
+      .then(() => dispatch(createDataSuccess()))
+      .catch(error => dispatch(createDataFail(error.response.data)))
   }
 }
 

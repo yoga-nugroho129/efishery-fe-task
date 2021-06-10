@@ -11,9 +11,9 @@ import {
   GET_DATA_SIZE_SUCCESS,
   GET_DATA_SIZE_FAIL,
 
-  // CREATE_DATA_REQUEST,
-  // CREATE_DATA_SUCCESS,
-  // CREATE_DATA_FAIL,
+  CREATE_DATA_REQUEST,
+  CREATE_DATA_SUCCESS,
+  CREATE_DATA_FAIL,
 
   // UPDATE_DATA_REQUEST,
   // UPDATE_DATA_SUCCESS,
@@ -39,6 +39,7 @@ const initState = {
 
 const reducer = (state = initState, action) => {
   switch (action.type) {
+  // GET ALL DATA FISH
     case GET_DATA_FISH_REQUEST:
       return {
         ...state,
@@ -59,6 +60,7 @@ const reducer = (state = initState, action) => {
         error: action.payload,
       }
   
+  // GET AREA
     case GET_DATA_AREA_REQUEST:
       return {
         ...state,
@@ -79,6 +81,7 @@ const reducer = (state = initState, action) => {
         error: action.payload,
       }
   
+  // GET SIZE
     case GET_DATA_SIZE_REQUEST:
       return {
         ...state,
@@ -99,6 +102,28 @@ const reducer = (state = initState, action) => {
         error: action.payload,
       }
 
+  // GET SIZE
+    case CREATE_DATA_REQUEST:
+      return {
+        ...state,
+        isLoadingButton: true
+      }
+
+    case CREATE_DATA_SUCCESS:
+      return {
+        ...state,
+        isLoadingButton: false,
+        isRequestSuccess: true,
+      }
+
+    case CREATE_DATA_FAIL:
+      return {
+        ...state,
+        isLoadingButton: false,
+        error: action.payload,
+      }      
+
+  // DELETE
     case DELETE_DATA_REQUEST:
       return {
         ...state,

@@ -4,12 +4,14 @@ const InputField = ({
   label,
   type,
   placeholder,
-  value
+  value,
+  name,
+  onChange
 }) => {
   return (
     <div className="input-field">
       <label>{label}</label>
-      <input type={type} placeholder={placeholder} value={value} />
+      <input type={type} placeholder={placeholder} value={value} name={name} onChange={onChange} />
     </div>
   )
 }

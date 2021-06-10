@@ -4,13 +4,13 @@ import {
   GET_DATA_FISH_SUCCESS,
   GET_DATA_FISH_FAIL,
 
-  // GET_DATA_AREA_REQUEST,
-  // GET_DATA_AREA_SUCCESS,
-  // GET_DATA_AREA_FAIL,
+  GET_DATA_AREA_REQUEST,
+  GET_DATA_AREA_SUCCESS,
+  GET_DATA_AREA_FAIL,
 
-  // GET_DATA_SIZE_REQUEST,
-  // GET_DATA_SIZE_SUCCESS,
-  // GET_DATA_SIZE_FAIL,
+  GET_DATA_SIZE_REQUEST,
+  GET_DATA_SIZE_SUCCESS,
+  GET_DATA_SIZE_FAIL,
 
   // CREATE_DATA_REQUEST,
   // CREATE_DATA_SUCCESS,
@@ -56,6 +56,64 @@ export const handleGetDataFish = () => {
       .get('/list')
       .then(response => dispatch(getDataFishSuccess(response.data)))
       .catch(error => dispatch(getDataFishFail(error.response.data)))
+  }
+}
+
+const getDataAreaRequest = () => {
+  return { type: GET_DATA_AREA_REQUEST }
+}
+
+const getDataAreaSuccess = areaList => {
+  return {
+    type: GET_DATA_AREA_SUCCESS,
+    payload: areaList
+  }
+}
+
+const getDataAreaFail = error => {
+  return {
+    type: GET_DATA_AREA_FAIL,
+    payload: error
+  }
+}
+
+export const handleGetDataArea = () => {
+  return dispatch => {
+    dispatch(getDataAreaRequest())
+
+    axios
+      .get('/option_area')
+      .then(response => dispatch(getDataAreaSuccess(response.data)))
+      .catch(error => dispatch(getDataAreaFail(error.response.data)))
+  }
+}
+
+const getDataSizeRequest = () => {
+  return { type: GET_DATA_SIZE_REQUEST }
+}
+
+const getDataSizeSuccess = sizeList => {
+  return {
+    type: GET_DATA_SIZE_SUCCESS,
+    payload: sizeList
+  }
+}
+
+const getDataSizeFail = error => {
+  return {
+    type: GET_DATA_SIZE_FAIL,
+    payload: error
+  }
+}
+
+export const handleGetDataSize = () => {
+  return dispatch => {
+    dispatch(getDataSizeRequest())
+
+    axios
+      .get('/option_size')
+      .then(response => dispatch(getDataSizeSuccess(response.data)))
+      .catch(error => dispatch(getDataSizeFail(error.response.data)))
   }
 }
 

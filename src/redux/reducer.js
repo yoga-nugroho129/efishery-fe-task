@@ -3,13 +3,13 @@ import {
   GET_DATA_FISH_SUCCESS,
   GET_DATA_FISH_FAIL,
 
-  // GET_DATA_AREA_REQUEST,
-  // GET_DATA_AREA_SUCCESS,
-  // GET_DATA_AREA_FAIL,
+  GET_DATA_AREA_REQUEST,
+  GET_DATA_AREA_SUCCESS,
+  GET_DATA_AREA_FAIL,
 
-  // GET_DATA_SIZE_REQUEST,
-  // GET_DATA_SIZE_SUCCESS,
-  // GET_DATA_SIZE_FAIL,
+  GET_DATA_SIZE_REQUEST,
+  GET_DATA_SIZE_SUCCESS,
+  GET_DATA_SIZE_FAIL,
 
   // CREATE_DATA_REQUEST,
   // CREATE_DATA_SUCCESS,
@@ -29,6 +29,7 @@ import {
 const initState = {
   isLoading: false,
   isLoadingButton: false,
+  isLoadingComponent: false,
   allDataFish: [],
   dataArea: [],
   dataSize: [],
@@ -58,26 +59,45 @@ const reducer = (state = initState, action) => {
         error: action.payload,
       }
   
-    // case GET_DATA_AREA_REQUEST:
-    //   return {
-    //     ...state,
-    //     isLoading: true
-    //   }
+    case GET_DATA_AREA_REQUEST:
+      return {
+        ...state,
+        isLoadingComponent: true
+      }
 
-    // case GET_DATA_AREA_SUCCESS:
-    //   return {
-    //     ...state,
-    //     isLoading: false,
-    //     allDataFish: action.payload,
-    //     isRequestSuccess: true
-    //   }
+    case GET_DATA_AREA_SUCCESS:
+      return {
+        ...state,
+        isLoadingComponent: false,
+        dataArea: action.payload,
+      }
 
-    // case GET_DATA_AREA_FAIL:
-    //   return {
-    //     ...state,
-    //     isLoading: false,
-    //     error: action.payload,
-    //   }
+    case GET_DATA_AREA_FAIL:
+      return {
+        ...state,
+        isLoadingComponent: false,
+        error: action.payload,
+      }
+  
+    case GET_DATA_SIZE_REQUEST:
+      return {
+        ...state,
+        isLoadingComponent: true
+      }
+
+    case GET_DATA_SIZE_SUCCESS:
+      return {
+        ...state,
+        isLoadingComponent: false,
+        dataSize: action.payload,
+      }
+
+    case GET_DATA_SIZE_FAIL:
+      return {
+        ...state,
+        isLoadingComponent: false,
+        error: action.payload,
+      }
 
     case DELETE_DATA_REQUEST:
       return {

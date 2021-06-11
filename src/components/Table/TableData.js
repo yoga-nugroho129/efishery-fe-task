@@ -32,6 +32,7 @@ const TableData = ({
                         }
                       </span>
                     </div>
+                    <div>{column.canFilter ? column.render('Filter') : null}</div>
                   </th>
                 ))
               }

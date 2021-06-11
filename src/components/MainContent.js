@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import TableData from './Table/TableData'
-import { useTable,  useGlobalFilter, useSortBy, usePagination  } from 'react-table'
-import { CreateModal, DeleteModal, EditModal, LoadingSpinner, TablePagination, TableSearchField } from '.'
+import { useTable,  useFilters, useGlobalFilter, useSortBy, usePagination  } from 'react-table'
+import { CreateModal, DeleteModal, EditModal, LoadingSpinner, TablePagination, TableSearchField, ColumnFilter } from '.'
 import { FaEdit, FaTrashAlt } from 'react-icons/fa'
 import moment from 'moment'
 import { connect } from 'react-redux'
@@ -42,28 +42,37 @@ const MainContent = ({
     {
       Header: "Komoditas",
       accessor: "komoditas",
+      Filter: ColumnFilter
     },
     {
       Header: "Provinsi",
       accessor: "area_provinsi",
+      Filter: ColumnFilter
     },
     {
       Header: "Kab/Kota",
       accessor: "area_kota",
+      Filter: ColumnFilter
     },
     {
       Header: "Ukuran",
       accessor: "size",
+      Filter: ColumnFilter,
+      disableFilters: true
     },
     {
       Header: "Harga",
       accessor: "price",
-      Cell: item => <span>{new Intl.NumberFormat("id-ID", {style: "currency", currency: "IDR"}).format(item.value)}</span>
+      Cell: item => <span>{new Intl.NumberFormat("id-ID", {style: "currency", currency: "IDR"}).format(item.value)}</span>,
+      Filter: ColumnFilter,
+      disableFilters: true
     },
     {
       Header: "Tanggal",
       accessor: "tgl_parsed",
-      Cell: item => <span>{moment(item.value).format('D MMM YYYY')}</span>
+      Cell: item => <span>{moment(item.value).format('D MMM YYYY')}</span>,
+      Filter: ColumnFilter,
+      disableFilters: true
     },
     {
       Header: "Aksi",
@@ -85,11 +94,14 @@ const MainContent = ({
           </button>
         </div>
       ),
-      disableSortBy: true
+      disableSortBy: true,
+      Filter: ColumnFilter,
+      disableFilters: true
     },
   ], [])
   const tableInstance = useTable(
     { columns, data },
+    useFilters,
     useGlobalFilter,
     useSortBy,
     usePagination

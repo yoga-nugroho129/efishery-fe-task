@@ -4,6 +4,7 @@ import Footer from './Footer'
 import TableData from './Table/TableData'
 import TableSearchField from './Table/TableSearchField'
 import TablePagination from './Table/TablePagination'
+import ColumnFilter from './Table/ColumnFilter'
 import CreateModal from './Modals/CreateModal'
 import DeleteModal from './Modals/DeleteModal'
 import EditModal from './Modals/EditModal'
@@ -17,6 +18,7 @@ export {
   TableData,
   TableSearchField,
   TablePagination,
+  ColumnFilter,
   CreateModal,
   DeleteModal,
   EditModal,

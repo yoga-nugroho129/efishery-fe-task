@@ -1,0 +1,74 @@
+.react-responsive-modal-modal {
+  border-radius: 5px;
+  padding: 0 !important;
+
+  .modal-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    font-weight: 600;
+    color: #ffffff;
+
+    .close-modal {
+      padding: 0;
+      background-color: transparent;
+    }
+  }
+
+  .delete-modal-title {
+    background-color: $red-color;
+    width: 300px;
+  }
+
+  .edit-modal-title {
+    background-color: $main-color;
+    width: 300px;
+  }
+
+  .modal-body {
+    text-align: center;
+    padding: 15px;
+
+    .text-wrapper {
+      margin-bottom: 20px;
+      overflow-wrap: break-word;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: 15px;
+
+      button {
+        width: 100px;
+      }
+
+      .cancel-delete-btn {
+        background-color: $main-color;
+      }
+
+      .confirm-delete-btn {
+        background-color: $red-color;
+      }
+
+      .cancel-edit-btn {
+        background-color: transparent;
+        color: $secondary-color;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .confirm-edit-btn {
+        background-color: $main-color;
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+footer {
+  background-color: $secondary-color;
+  color: #ffffff;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+  font-size: 12px;
+  text-align: center;
+
+  a {
+    color: #ffffff;
+  }
+}

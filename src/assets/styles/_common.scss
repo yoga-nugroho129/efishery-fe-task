@@ -1,0 +1,108 @@
+@media only screen and (max-width: 576px) {
+  .container {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .container {
+    width: 540;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    width: 720px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .container {
+    width: 960px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    width: 1140px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .container {
+    width: 1320px;
+    margin: 0 auto;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $font-color;
+}
+
+h2 {
+  margin: 0;
+}
+
+button {
+  border: none;
+  border-radius: 7px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+
+  &:disabled {
+    opacity: 70% !important;
+    cursor: not-allowed;
+
+    &:hover {
+      opacity: 70% !important;
+    }
+  }
+
+  &:hover {
+    opacity: 85% !important;
+  }
+}
+
+.loading-btn {
+  animation: spin 1000ms linear infinite;
+}
+
+.input-field,
+.select-field {
+  text-align: left;
+  margin: 7px 0;
+
+  label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  input,
+  select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 5px;
+    border-radius: 5px;
+    border: 1px solid $main-color;
+  }
+}
+
+.App {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

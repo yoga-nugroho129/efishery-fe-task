@@ -1,0 +1,43 @@
+.main-content {
+  flex: 1;
+  margin: 30px auto 60px;
+
+  .title-section {
+    margin-bottom: 20px;
+  }
+
+  .action-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .add-btn {
+      background: $main-color;
+      color: #ffffff;
+    }
+
+    .search-field {
+      display: flex;
+      align-items: center;
+      background-color: #ffffff;
+      border-radius: 5px;
+      padding: 7px 10px;
+      box-shadow: $shadow;
+      -webkit-box-shadow: $shadow;
+      -moz-box-shadow: $shadow;
+
+      .search-input {
+        border: none;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .search-icon {
+        color: $main-color;
+      }
+    }
+  }
+}

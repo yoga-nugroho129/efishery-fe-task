@@ -1,4 +1,4 @@
-import Logo from './efishery-logo.png';
-import Loading from './loading.gif';
+import Logo from './images/efishery-logo.png';
+import Loading from './images/loading.gif';
 
 export { Logo, Loading };

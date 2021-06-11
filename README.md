@@ -26,7 +26,9 @@ This app only shows the data that has ID that is not `null`
 Table has `Search` feature, so you can type any text you want to search data.
 Search is not limited to certain column, it will search for the entire column (except action button column) for any match text input.
 
-Table also has `Sorting by Column` by click the table header.
+Table also has `Sorting by Column` by click the table header, so it will sort ascending & descending.
+
+Some table column also has `Filter by Select` so it will filter the table based on specific selected data.
 
 Table has it's `Pagination` with page-jump feature, so you can directly move to certain page you want by entering the number of page. Per page display 10 rows.
 

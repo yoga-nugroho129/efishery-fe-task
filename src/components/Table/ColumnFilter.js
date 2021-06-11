@@ -22,7 +22,7 @@ const ColumnFilter = ({
       }}
       className="column-filter-select"
     >
-      <option value="">All</option>
+      <option value="">Tampilkan Semua</option>
       {options.map((option, i) => (
         <option key={i} value={option}>
           {option}

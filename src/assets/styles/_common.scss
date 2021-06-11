@@ -53,25 +53,28 @@ h2 {
 }
 
 button {
-  border: none;
+  border: 1.5px solid #ffffff;
   border-radius: 7px;
   padding: 10px 20px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
   color: #ffffff;
+  box-sizing: border-box;
 
   &:disabled {
-    opacity: 70% !important;
+    color: #bbbbbb !important;
     cursor: not-allowed;
 
     &:hover {
-      opacity: 70% !important;
+      color: #bbbbbb !important;
     }
   }
 
   &:hover {
-    opacity: 85% !important;
+    background-color: #efefef !important;
+    color: $font-color !important;
+    border: 1.5px solid $main-color !important;
   }
 }
 
